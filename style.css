@@ -20,151 +20,132 @@ body {
   justify-content: center;
 }
 
-@-webkit-keyframes scaleAnimation {
-  0% {
-    opacity: 0;
-    -webkit-transform: scale(1.5);
-    transform: scale(1.5);
-  }
-
-  100% {
-    opacity: 1;
-    -webkit-transform: scale(1);
-    transform: scale(1);
-  }
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+  color: inherit;
 }
 
-@keyframes scaleAnimation {
-  0% {
-    opacity: 0;
-    -webkit-transform: scale(1.5);
-    transform: scale(1.5);
-  }
+/*Actual Style*/
 
-  100% {
-    opacity: 1;
-    -webkit-transform: scale(1);
-    transform: scale(1);
-  }
+/*=======================
+       C-Container
+=========================*/
+.c-container {
+  max-width: 27rem;
+  margin: 1rem auto 0;
+  padding: 1rem;
 }
 
-@-webkit-keyframes drawCircle {
-  0% {
-    stroke-dashoffset: 151px;
-  }
+/*=======================
+       O-Circle
+=========================*/
 
-  100% {
-    stroke-dashoffset: 0;
-  }
+.o-circle {
+  display: flex;
+  width: 10.555rem;
+  height: 10.555rem;
+  justify-content: center;
+  align-items: flex-start;
+  border-radius: 50%;
+  animation: circle-appearance .8s ease-in-out 1 forwards, set-overflow .1s 1.1s forwards;
 }
 
-@keyframes drawCircle {
-  0% {
-    stroke-dashoffset: 151px;
-  }
-
-  100% {
-    stroke-dashoffset: 0;
-  }
+.c-container__circle {
+  margin: 0 auto 5.5rem;
 }
 
-@-webkit-keyframes drawCheck {
-  0% {
-    stroke-dashoffset: 36px;
-  }
+/*=======================
+    C-Circle Sign
+=========================*/
 
-  100% {
-    stroke-dashoffset: 0;
-  }
-}
-
-@keyframes drawCheck {
-  0% {
-    stroke-dashoffset: 36px;
-  }
-
-  100% {
-    stroke-dashoffset: 0;
-  }
-}
-
-@-webkit-keyframes fadeOut {
-  0% {
-    opacity: 1;
-  }
-
-  100% {
-    opacity: 0;
-  }
-}
-
-@keyframes fadeOut {
-  0% {
-    opacity: 1;
-  }
-
-  100% {
-    opacity: 0;
-  }
-}
-
-@-webkit-keyframes fadeIn {
-  0% {
-    opacity: 0;
-  }
-
-  100% {
-    opacity: 1;
-  }
-}
-
-@keyframes fadeIn {
-  0% {
-    opacity: 0;
-  }
-
-  100% {
-    opacity: 1;
-  }
-}
-
-#successAnimation {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-#successAnimationCircle {
-  stroke-dasharray: 151px 151px;
-  stroke: #6fffe9;
-}
-
-#successAnimationCheck {
-  stroke-dasharray: 36px 36px;
-  stroke: #6fffe9;
-}
-
-#successAnimationResult {
-  fill: #6fffe9;
+.o-circle__sign {
+  position: relative;
   opacity: 0;
+  background: #fff;
+  animation-duration: .8s;
+  animation-delay: .2s;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
 }
 
-#successAnimation.animated {
-  -webkit-animation: 1s ease-out 0s 1 both scaleAnimation;
-  animation: 1s ease-out 0s 1 both scaleAnimation;
+.o-circle__sign::before,
+.o-circle__sign::after {
+  content: "";
+  position: absolute;
+  background: inherit;
 }
 
-#successAnimation.animated #successAnimationCircle {
-  -webkit-animation: 1s cubic-bezier(0.77, 0, 0.175, 1) 0s 1 both drawCircle, 0.3s linear 0.9s 1 both fadeOut;
-  animation: 1s cubic-bezier(0.77, 0, 0.175, 1) 0s 1 both drawCircle, 0.3s linear 0.9s 1 both fadeOut;
+.o-circle__sign::after {
+  left: 100%;
+  top: 0%;
+  width: 500%;
+  height: 95%;
+  transform: translateY(4%) rotate(0deg);
+  border-radius: 0;
+  opacity: 0;
+  animation: set-shaddow 0s 1.13s ease-in-out forwards;
+  z-index: -1;
 }
 
-#successAnimation.animated #successAnimationCheck {
-  -webkit-animation: 1s cubic-bezier(0.77, 0, 0.175, 1) 0s 1 both drawCheck, 0.3s linear 0.9s 1 both fadeOut;
-  animation: 1s cubic-bezier(0.77, 0, 0.175, 1) 0s 1 both drawCheck, 0.3s linear 0.9s 1 both fadeOut;
+
+
+/*=======================
+      Sign Failure
+=========================*/
+
+.o-circle__sign--failure {
+  background: #e63946;
 }
 
-#successAnimation.animated #successAnimationResult {
-  -webkit-animation: 0.3s linear 0.9s both fadeIn;
-  animation: 0.3s linear 0.9s both fadeIn;
+.o-circle__sign--failure .o-circle__sign {
+  width: 1rem;
+  height: 7rem;
+  transform: translateY(25%) rotate(45deg) scale(.1);
+  border-radius: 50% 50% 50% 50% / 10%;
+  animation-name: failure-sign-appearance;
+}
+
+.o-circle__sign--failure .o-circle__sign::before {
+  top: 50%;
+  width: 100%;
+  height: 100%;
+  transform: translateY(-50%) rotate(90deg);
+  border-radius: inherit;
+}
+
+
+
+/*CIRCLE*/
+@keyframes circle-appearance {
+  0% {
+    transform: scale(0);
+  }
+
+  50% {
+    transform: scale(1.5);
+  }
+
+  60% {
+    transform: scale(1);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+/*SIGN*/
+@keyframes failure-sign-appearance {
+  50% {
+    opacity: 1;
+    transform: translateY(25%) rotate(45deg) scale(1.7);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(25%) rotate(45deg) scale(1);
+  }
 }
