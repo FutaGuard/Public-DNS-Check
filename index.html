@@ -4,11 +4,11 @@
 <head>
   <meta charset="UTF-8">
   <title>FutaGuard DNS</title>
-  <script type="text/javascript">
+  <!-- <script type="text/javascript">
     if (!window.location.href.includes('https://')) {
       window.location.href = "https://" + window.location.hostname;
     }
-  </script>
+  </script> -->
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
   <link rel="stylesheet" href="./style.css">
@@ -18,15 +18,30 @@
 <body>
 
 
-  <div class="container">
+  <div class="container" style="text-align:center">
+    <!-- 你在這尋求什麼中文小老師的話你是否搞錯了蛇摸？ -->
     <h1>無已被設定的 FutaGuard DNS</h1>
+
+    <!-- 這邊我抄來ㄉ -->
     <div class="o-circle c-container__circle o-circle__sign--failure">
       <div class="o-circle__sign"></div>
     </div>
-    <!-- 你在這尋求什麼中文小老師的話你是否搞錯了蛇摸？ -->
+
+    <button id="asking" onclick="redirect()" class="button is-warning is-outlined has-addons is-centered">
+      <span>您有設定障礙嗎</span>
+    </button>
   </div>
 
 
+
+  <script>
+    function redirect() {
+      var popup = window.confirm("接下來的網頁沒有黑暗模式，可能會閃瞎你，要繼續前往ㄇ？");
+      if (popup) {
+        window.location.href = "https://futaguard.github.io/Public-DNS";
+      }
+    }
+  </script>
 
 
 </body>
