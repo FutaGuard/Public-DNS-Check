@@ -1,49 +1,46 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-Hant">
 
-<head>
-  <meta charset="UTF-8">
-  <title>FutaGuard DNS</title>
-  <!-- <script type="text/javascript">
-    if (!window.location.href.includes('https://')) {
-      window.location.href = "https://" + window.location.hostname;
-    }
-  </script> -->
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
-  <link rel="stylesheet" href="./style.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.8.2/css/bulma.min.css" />
-</head>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no" />
+    <title>FutaGuard DNS</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.8.2/css/bulma.min.css" />
+    <link rel="stylesheet" href="svg-icons-animate.css">
+    <link rel="stylesheet" href="style.css">
+  </head>
 
-<body>
-
-
-  <div class="container" style="text-align:center">
-    <!-- 你在這尋求什麼中文小老師的話你是否搞錯了蛇摸？ -->
-    <h1>無已被設定的 FutaGuard DNS</h1>
-
-    <!-- 這邊我抄來ㄉ -->
-    <div class="o-circle c-container__circle o-circle__sign--failure">
-      <div class="o-circle__sign"></div>
+  <body>
+    <div class="container has-text-centered">
+      <!-- 你在這尋求什麼中文小老師的話你是否搞錯了蛇摸？ -->
+      <h1>無已被設定的 FutaGuard DNS</h1>
+      <div class="svg-box">
+        <svg class="circular red-stroke">
+          <circle class="path" cx="75" cy="75" r="50" fill="none" stroke-width="5" stroke-miterlimit="10" />
+        </svg>
+        <svg class="cross red-stroke">
+          <g transform="matrix(0.79961,8.65821e-32,8.39584e-32,0.79961,-502.652,-204.518)">
+            <path class="first-line" d="M634.087,300.805L673.361,261.53" fill="none" />
+          </g>
+          <g transform="matrix(-1.28587e-16,-0.79961,0.79961,-1.28587e-16,-204.752,543.031)">
+            <path class="second-line" d="M634.087,300.805L673.361,261.53" />
+          </g>
+        </svg>
+      </div>
+      <div>
+        <button id="asking" onclick="redirect()" class="button is-outlined is-warning">
+          <span>您有設定障礙嗎</span>
+        </button>
+      </div>
     </div>
-
-    <button id="asking" onclick="redirect()" class="button is-warning is-outlined has-addons is-centered">
-      <span>您有設定障礙嗎</span>
-    </button>
-  </div>
-
-
-
-  <script>
-    function redirect() {
-      var popup = window.confirm("接下來的網頁沒有黑暗模式，可能會閃瞎你，要繼續前往ㄇ？");
-      if (popup) {
-        window.location.href = "https://futaguard.github.io/Public-DNS";
+    <script>
+      function redirect() {
+        if (window.confirm("接下來的網頁沒有黑暗模式，可能會閃瞎你，要繼續前往ㄇ？")) {
+          window.location.href = "https://futaguard.github.io/Public-DNS";
+        }
       }
-    }
-  </script>
-
-
-</body>
+    </script>
+  </body>
 
 </html>
