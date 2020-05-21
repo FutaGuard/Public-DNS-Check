@@ -10,7 +10,7 @@
 }
 
 .green-stroke {
-  stroke: #7CB342;
+  stroke: #6fffe9;
 }
 
 .red-stroke {
@@ -30,17 +30,14 @@
 }
 
 .circular.green-stroke circle.path {
-  stroke: rgba(124, 179, 66, 1.0);
   animation: 0.7s draw-circle ease-out, 0.7s fill-green-circle 1.5s both;
 }
 
 .circular.red-stroke circle.path {
-  stroke: rgba(255, 98, 69, 1.0);
   animation: 0.7s draw-circle ease-out, 0.7s fill-red-circle 1.5s both;
 }
 
 .circular.yellow-stroke circle.path {
-  stroke: rgba(255, 193, 7, 1.0);
   animation: 0.7s draw-circle ease-out, 0.7s fill-yellow-circle 1.5s both;
 }
 
@@ -66,11 +63,13 @@
     stroke-dashoffset: 0;
     opacity: 1;
   }
+
   80% {
     stroke-dasharray: 330, 330;
     stroke-dashoffset: 0;
     opacity: 1;
   }
+
   100% {
     opacity: 0.4;
   }
@@ -80,9 +79,10 @@
   from {
     fill: #0b132b;
   }
+
   to {
-    stroke: #7CB342;
-    fill: #7CB342;
+    stroke: #6fffe9;
+    fill: #6fffe9;
     opacity: 1.0;
   }
 }
@@ -91,6 +91,7 @@
   from {
     fill: #0b132b;
   }
+
   to {
     stroke: #FF6245;
     fill: #FF6245;
@@ -102,6 +103,7 @@
   from {
     fill: #0b132b;
   }
+
   to {
     stroke: #FFC107;
     fill: #FFC107;
@@ -115,11 +117,13 @@
     stroke-dashoffset: 48;
     opacity: 0;
   }
+
   50% {
     stroke-dasharray: 49, 80;
     stroke-dashoffset: 48;
     opacity: 1;
   }
+
   100% {
     stroke-dasharray: 130, 80;
     stroke-dashoffset: 48;
@@ -151,10 +155,12 @@
     stroke-dasharray: 0, 56;
     stroke-dashoffset: 0;
   }
+
   50% {
     stroke-dasharray: 0, 56;
     stroke-dashoffset: 0;
   }
+
   100% {
     stroke-dasharray: 56, 330;
     stroke-dashoffset: 0;
@@ -166,10 +172,12 @@
     stroke-dasharray: 0, 55;
     stroke-dashoffset: 1;
   }
+
   50% {
     stroke-dasharray: 55, 0;
     stroke-dashoffset: 1;
   }
+
   100% {
     stroke-dasharray: 55, 0;
     stroke-dashoffset: 1;
@@ -178,13 +186,13 @@
 
 @keyframes draw-white-line {
   100% {
-    stroke: white;
+    stroke: #0b132b;
   }
 }
 
 @keyframes draw-white-dot {
   100% {
-    fill: white;
+    fill: #0b132b;
   }
 }
 
@@ -210,10 +218,12 @@
     transform: scale(0);
     opacity: 0;
   }
+
   50% {
     transform: scale(0);
     opacity: 1;
   }
+
   100% {
     transform: scale(1);
   }
